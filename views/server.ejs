@@ -142,6 +142,10 @@
             <input type="text" id="longUrl" name="longUrl" required>
             <button typr="submit">Generate</button>
         </form>
+        <% if(shortUrl) { %> 
+        <p>Short Url : <a href=" <%= shortUrl %>" target="_blank">
+            <%= shortUrl %>
+        </a></p> <%} %>
     </div>
 </body>
 </html>

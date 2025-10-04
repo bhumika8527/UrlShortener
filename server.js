@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose';
-import { urlShort } from './Controllers/url.js';  // fixed path
+import { urlShort,getOriginalUrl } from './Controllers/url.js';  // fixed path
 
 
 const app = express();
@@ -19,6 +19,8 @@ app.get('/', (req,res)=>{
 // handle Url Submission
 app.post('/shorten' ,urlShort)
 
+//redirect to original URL using short url
+app.get('/:shortCode' ,getOriginalUrl)
 
 
 
